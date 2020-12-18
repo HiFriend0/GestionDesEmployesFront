@@ -1,0 +1,64 @@
+<div class="card my-5">
+    <div class="card-body">
+   
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" [(ngModel)]="employee.firstName" 
+            class="form-control" 
+            id="firstName" 
+            name="firstName" 
+            placeholder="Enter your firstName"
+            required #firstName="ngModel">
+            <div [hidden]="!firstName.pristine" class="alert alert-danger">firstName is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" [(ngModel)]="employee.lastName" 
+            class="form-control" 
+            id="lastName" 
+            name="lastName" 
+            placeholder="Enter your lastName"
+            required #lastName="ngModel">
+            <div [hidden]="!lastName.pristine" class="alert alert-danger">lastName is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="mail">Email Adresse</label>
+          <input type="text" [(ngModel)]="employee.mail" 
+            class="form-control" 
+            id="mail" 
+            name="mail" 
+            placeholder="Enter your email"
+            required #mail="ngModel">
+            <div [hidden]="!mail.pristine" class="alert alert-danger">email is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role in the company</label>
+          <input type="text" [(ngModel)]="employee.role" 
+            class="form-control" 
+            id="role" 
+            name="role" 
+            placeholder="Enter your role in the company"
+            required #role="ngModel">
+            <div [hidden]="!role.pristine" class="alert alert-danger">role is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Recruitment Date</label>
+          <input type="text" [(ngModel)]="employee.recruitmentDate" 
+            class="form-control" 
+            id="date" 
+            name="date" 
+            placeholder="Enter your recruitmentDate in the company"
+            required #date="ngModel">
+            <div [hidden]="!date.pristine" class="alert alert-danger">recruiment date is required</div>
+        </div>
+
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
